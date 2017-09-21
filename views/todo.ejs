@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+        <script>
+            
+            function add(){
+                var value = $("#myid").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/todo",
+                    data: {
+                        item: value
+                    }
+                }).done(function(data) {
+                    location.reload();
+                });           
+            }
+
+            function remove(id){
+                $.ajax({
+                    type: "DELETE",
+                    url: "/todo",
+                    data: {
+                        item: id
+                    }
+                }).done(function(data) {
+                    location.reload();
+                });           
+            }
+        </script>
+    </head>
+<body>
+
+<h1>TODO</h1>
+
+<p>LISTA:</p>
+Valor: <input type="text" id="myid"/><br>
+
+<input type="submit" value="GRABAR" onclick="add()"/>
+<br>
+<ul>
+    <% todos.forEach(function(it){ %>
+        <li><%= it.item %> <a href="#" onclick="remove('<%= it.item %>')">remove</a></li>
+    <% }); %>
+
+</ul>
+</body>
+</html>
