@@ -2,8 +2,8 @@
 
 ## Prints
 
-![Alt text](demo1.PNG?raw=true 'Home')
-![Alt text](demo2.PNG?raw=true 'Home')
+![Alt text](demo1.png?raw=true 'Home')
+![Alt text](demo2.png?raw=true 'Home')
 
 ### Install & Run
 
